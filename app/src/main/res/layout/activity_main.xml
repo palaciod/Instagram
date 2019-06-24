@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#006699"
+        android:background="#006693"
         android:weightSum="100">
 
         <LinearLayout
@@ -102,7 +102,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="15dp"
                 android:textSize="13dp"
-                android:text="Don't have an account? Register here!"
+                android:text="Don't have an account? Register here fuck nut!"
                 />
 
         </LinearLayout>
