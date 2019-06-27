@@ -103,6 +103,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="15dp"
                 android:textSize="13dp"
+                android:onClick="to_register"
                 android:text="Don't have an account? Register here!"
                 />
 

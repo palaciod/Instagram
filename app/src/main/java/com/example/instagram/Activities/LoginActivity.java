@@ -45,6 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+    public void to_register(View view){
+        Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onStart() {

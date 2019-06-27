@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.HomeFeedActivity">
-
+    tools:context=".Activities.AccountProfile">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,34 +20,36 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/camera_post"
-                android:onClick="log_out"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_cam_trans"
-                android:layout_weight="15"
-                android:padding="15dp"/>
+                android:layout_weight="20"
+                android:src="@drawable/ic_archive_button"
+                android:padding="18dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"/>
             <ImageView
-                android:id="@+id/insta_letter_logo"
-                android:clickable="true"
-                android:onClick="letter_logo_touched"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="70"
-                android:src="@drawable/ic_insta_letter_five"
-                android:padding="1dp"
-                />
-
+                android:layout_weight="20"
+                android:src="@drawable/ic_settings_button"
+                android:padding="20dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"
-            android:background="#000000"></LinearLayout>
+            android:background="#000000">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"></LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="80">
+            android:layout_weight="60">
 
         </ScrollView>
         <LinearLayout
@@ -66,7 +67,6 @@
             <ImageView
 
                 android:layout_width="0dp"
-                android:onClick="return_to_top"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
                 android:src="@drawable/ic_mini_house"
@@ -93,7 +93,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
-                android:onClick="to_profile"
+                android:padding="20dp"
                 />
 
         </LinearLayout>

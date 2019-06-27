@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Instagram</string>
     <string name="login">Login</string>
+    <string name="email_signup">Email:</string>
+    <string name="username">Username:</string>
+    <string name="passsword">Password:</string>
+    <string name="rype_pass">Retype Password:</string>
+    <string name="register_a_new_account">Register A New Account</string>
+    <string name="register">Register</string>
 </resources>
