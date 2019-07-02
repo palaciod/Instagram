@@ -87,9 +87,10 @@ public class FirebaseMethods {
     }
 
     public void logout(final Class next_class){
-        FirebaseAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
         Toast.makeText((Activity) myContext,"You've been signed out.",Toast.LENGTH_LONG).show();
         Intent intent = new Intent(myContext,next_class);
+        FirebaseAuth.getInstance().signOut();
         myContext.startActivity(intent);
         ((Activity) myContext).finish();
 

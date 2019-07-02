@@ -35,6 +35,7 @@ public class HomeFeedActivity extends AppCompatActivity {
     // Temp method to logout
     public void log_out(View view){
         fbMethods.logout(LoginActivity.class);
+
     }
     public void letter_logo_touched(View view){
         insta_logo = findViewById(R.id.insta_letter_logo);
@@ -50,6 +51,7 @@ public class HomeFeedActivity extends AppCompatActivity {
     public void to_profile(View view){
         Intent intent = new Intent(HomeFeedActivity.this,AccountProfile.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

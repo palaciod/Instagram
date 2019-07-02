@@ -7,4 +7,5 @@
     <string name="rype_pass">Retype Password:</string>
     <string name="register_a_new_account">Register A New Account</string>
     <string name="register">Register</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

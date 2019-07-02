@@ -12,4 +12,12 @@ public class AccountProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_profile);
     }
+    @Override
+    public void onStart(){
+        super.onStart();
+    }
+    @Override
+    public void onStop(){
+        super.onStop();
+    }
 }
