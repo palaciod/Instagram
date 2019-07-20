@@ -107,6 +107,7 @@
                         android:textColor="#000"
                         android:textAlignment="center"
                         android:text="@string/edit_profile"
+                        android:onClick="edit_profile_button"
                         android:background="@drawable/rounded_edit_text"
                         />
 

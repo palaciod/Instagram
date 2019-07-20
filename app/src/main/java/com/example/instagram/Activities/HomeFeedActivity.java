@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.instagram.Firebase.FirebaseMethods;
+import com.example.instagram.Models.FirebaseMethods;
 import com.example.instagram.R;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Timer;
 import java.util.TimerTask;

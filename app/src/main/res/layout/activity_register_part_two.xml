@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.RegisterPartTwo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:textColor="#DB7093"
+            android:text="Tell me more about yourself:"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:text="My name is.."
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/intro_layout_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:padding="5dp"
+            android:gravity="center"
+            android:hint="First Name"
+            android:textSize="15dp"
+            android:background="@drawable/rounded_edit_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:text="I am a..."
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:weightSum="100"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/intro_layout_woman_gender"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:background="@drawable/women_button"
+                android:onClick="my_gender_is_female"
+                android:hint="Woman"
+                android:textColorHint="#FFFFFF"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/intro_layout_man_gender"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:background="@drawable/men_button"
+                android:hint="Man"
+                android:onClick="my_gender_is_male"
+                android:textColorHint="#FFFFFF"
+                android:clickable="true"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:paddingStart="20dp"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+
+            android:textStyle="bold"
+            android:text="Birthday:"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="mm/dd/yyyy"
+            android:textSize="15dp"
+            android:id="@+id/bday_intro"/>
+
+
+
+        <!--The Linearlayout below is used as an indent-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="30"
+            android:weightSum="100"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="What's your number?"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#DB7093"
+                android:layout_weight="15"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="18"
+                android:gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="(###) - ### - ####"
+                android:textSize="20dp"
+                android:inputType="phone"
+                android:id="@+id/phone_number_info"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="25"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/intro_layout_continue"
+
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="80"
+
+                android:hint="Continue..."
+                android:textColorHint="#FFFFFF"
+                android:clickable="true" />
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

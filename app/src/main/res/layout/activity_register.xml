@@ -5,216 +5,138 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterActivity">
+
+    <!--The TextViews that hold the questions will hold image views instead with the lettering made within illustrator-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#006693"
-        android:orientation="vertical"
-        android:weightSum="100">
+        android:weightSum="100"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="8"
+            android:weightSum="100">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:onClick="previousActivity"
+                android:id="@+id/register_back_button"
+                android:text="@string/back"
+                />
+
+        </LinearLayout>
+
+        <!--The textview below will be replaced with an imageview-->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="15"
+            android:layout_weight="10"
+            android:text="Let's Get Started:"
+            android:textSize="25dp"
+
             android:gravity="center"
-            android:textColor="#000"
+            android:textColor="#DB7093"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="What's your email?"
+            android:textSize="25dp"
+            android:gravity="center"
+
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:hint="Email"
+            android:inputType="text"
+            android:background="@drawable/rounded_edit_text"
             android:textSize="30dp"
-            android:text="@string/register_a_new_account"/>
-        <!--Email Edit texts-->
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:id="@+id/register_email"/>
+
+        <!--The textview below will be replaced with an imageview-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="What will be your password?"
+            android:gravity="center"
+
+            android:textSize="25dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_edit_text"
+            android:gravity="center"
+            android:hint="Password"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:padding="5dp"
+            android:textColor="#39B54A"
+            android:id="@+id/register_password"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+
+            android:textSize="25dp"
+            android:text="Confirm Password: "/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@drawable/rounded_edit_text"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:hint="Password"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:padding="5dp"
+            android:id="@+id/password_confirmation"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="15"
+            android:layout_weight="18"
             android:weightSum="100"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/email_register"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="30dp"
-                android:text="@string/email_signup"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="70"
-                android:orientation="vertical"
-                android:weightSum="100">
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@drawable/rounded_edit_text"
-                    android:textAlignment="center"
-                    android:layout_weight="60"/>
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <!--Username editext-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="15"
-            android:weightSum="100"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/username_register"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="30dp"
-                android:text="@string/username"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="60"
-                android:orientation="vertical"
-                android:weightSum="100">
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@drawable/rounded_edit_text"
-                    android:textAlignment="center"
-                    android:layout_weight="60"/>
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="15"
-            android:weightSum="100"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="30dp"
-                android:text="@string/passsword"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="60"
-                android:orientation="vertical"
-                android:weightSum="100">
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@drawable/rounded_edit_text"
-                    android:textAlignment="center"
-                    android:layout_weight="60"/>
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="15"
-            android:weightSum="100"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:text="@string/rype_pass"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="70"
-                android:orientation="vertical"
-                android:weightSum="100">
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@drawable/rounded_edit_text"
-                    android:textAlignment="center"
-                    android:layout_weight="60"/>
-
-                <!--Empty LinearLayouts to hold the rounded edit texts-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="20"></LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="25"
-            android:orientation="vertical"
-            android:weightSum="100">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"></LinearLayout>
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="60"
-                android:textSize="30dp"
-                android:textColor="#000"
-                android:text="@string/register"
-                android:background="@drawable/rounded_edit_text"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20"></LinearLayout>
+                android:layout_width="0dp"
+                android:layout_weight="80"
+                android:layout_height="60dp"
+                android:onClick="toPartTwo"
+                android:hint="Continue"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25dp"
+
+                android:id="@+id/register_continue"/>
         </LinearLayout>
+
+
+
+
+
     </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
