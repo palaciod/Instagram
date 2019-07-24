@@ -41,6 +41,8 @@
             android:padding="5dp"
             android:gravity="center"
             android:hint="First Name"
+            android:textColorHint="#5D6D7E"
+            android:textColor="#000"
             android:textSize="15dp"
             android:background="@drawable/rounded_edit_text"/>
 
@@ -108,6 +110,8 @@
             android:gravity="center"
             android:background="@drawable/rounded_edit_text"
             android:hint="mm/dd/yyyy"
+            android:textColorHint="#5D6D7E"
+            android:textColor="#000"
             android:textSize="15dp"
             android:id="@+id/bday_intro"/>
 
@@ -146,6 +150,8 @@
                 android:gravity="center"
                 android:background="@drawable/rounded_edit_text"
                 android:hint="(###) - ### - ####"
+                android:textColorHint="#5D6D7E"
+                android:textColor="#000"
                 android:textSize="20dp"
                 android:inputType="phone"
                 android:id="@+id/phone_number_info"/>
@@ -167,7 +173,7 @@
 
             <Button
                 android:id="@+id/intro_layout_continue"
-
+                android:onClick="toNextPage"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="80"

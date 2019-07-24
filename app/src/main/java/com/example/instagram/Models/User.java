@@ -1,44 +1,63 @@
 package com.example.instagram.Models;
-
+// I should call this model user account details
 public class User {
+    private String name;
     private String userName;
-    private String password;
-    private Integer gender;
-    private String email;
-    private Integer phone_number;
+    private String gender;
+    private String phone_number;
+    private String bday;
+    private int age;
 
-    public User(){
-
+    public User(String _name, String birthday, int _age,  String phoneNumber, String _gender, String _username){
+        name = _name;
+        bday = birthday;
+        age = _age;
+        phone_number = phoneNumber;
+        bday = birthday;
+        gender = _gender;
+        userName = _username;
     }
-
+    public String getName(){
+        return name;
+    }
     public String getUserName(){
         return userName;
     }
-    public String getPassword(){
-        return password;
-    }
-    public Integer getGender(){
+
+    public String getGender(){
         return gender;
     }
-    public String getEmail(){
-        return email;
-    }
-    public Integer getPhone_number(){
+    public String getPhone_number(){
         return phone_number;
     }
     public void setUserName(String _username){
         this.userName = _username;
     }
-    public void setPassword(String pass){
-        this.password = pass;
-    }
-    public void setGender(Integer _gender){
-        this.gender = _gender;
-    }
-    public void setEmail(String _email){
-        this.email = _email;
-    }
-    public void setPhone_number(Integer number){
+
+    public void setPhone_number(String number){
         this.phone_number = number;
+    }
+    public void setName(String _name){
+        name  = _name;
+    }
+
+    public String getBday() {
+        return bday;
+    }
+
+    public void setBday(String bday) {
+        this.bday = bday;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

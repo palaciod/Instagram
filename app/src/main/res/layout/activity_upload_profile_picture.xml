@@ -26,6 +26,13 @@
             android:layout_height="0dp"
             android:layout_weight="40">
 
+            <ImageView
+                android:id="@+id/profile_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_foreground"
+                />
+
         </LinearLayout>
         <!--This is where the option to take a picture with the phone camera or upload from external memory option will be  -->
         <LinearLayout
@@ -33,7 +40,33 @@
             android:layout_height="0dp"
             android:layout_weight="25"
             android:weightSum="100"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30"
+                android:textColor="#000"
+                android:gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:text="Upload from Library"
+                android:id="@+id/photo_library"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                />
+            <TextView
+                android:onClick="take_a_picture"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/rounded_edit_text"
+                android:text="Take a Picture"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +78,7 @@
 
             <Button
                 android:id="@+id/intro_layout_continue"
-
+                android:onClick="toHomePage"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_weight="80"

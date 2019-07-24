@@ -1,16 +1,21 @@
 package com.example.instagram.Activities;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.example.instagram.Models.FirebaseMethods;
 import com.example.instagram.R;
+
+import org.w3c.dom.Text;
 
 import java.util.Calendar;
 
@@ -20,8 +25,11 @@ public class RegisterPartTwo extends AppCompatActivity {
     private int myGenderIsFemale;
     private TextView birthday_picker;
     private DatePickerDialog.OnDateSetListener dateSetListener;
-    private String bday;
+    private TextView phoneNumber;
     private int age;
+    private TextView nameTextView;
+    private String bday;
+    private FirebaseMethods fbMethods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,25 @@ public class RegisterPartTwo extends AppCompatActivity {
         myGenderIsMale = 0;
         myGenderIsFemale = 0;
         datePicker();
+        fbMethods = new FirebaseMethods(RegisterPartTwo.this);
+
+    }
+    public void toNextPage(View view){
+        nameTextView = findViewById(R.id.intro_layout_first_name);
+        phoneNumber = findViewById(R.id.phone_number_info);
+        fbMethods.write_to_database(nameTextView.getText().toString(),bday,age,phoneNumber.getText().toString(),gender_selected(),getUserName());
+        Intent intent = new Intent(RegisterPartTwo.this,UploadProfilePicture.class);
+        startActivity(intent);
+        finish();
+    }
+    public String gender_selected(){
+        if(myGenderIsMale==1){
+            return "male";
+        }
+        if(myGenderIsFemale==1){
+            return "female";
+        }
+        return null;
     }
     public void my_gender_is_male(View view){
         gender_is_man = (Button) findViewById(R.id.intro_layout_man_gender);
@@ -115,5 +142,17 @@ public class RegisterPartTwo extends AppCompatActivity {
         }
 
         return age;
+    }
+    // Will return the beginning part of your email as a default username.
+    public String getUserName(){
+        String username = "";
+        String email = fbMethods.getEmail();
+        for (int i = 0; i < email.length();i++){
+            if(email.charAt(i) == '@'){
+                break;
+            }
+            username = username + email.charAt(i);
+        }
+        return username;
     }
 }
