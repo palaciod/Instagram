@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AccountProfile">
+    tools:context=".Activities.searchedUserProfile">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,12 +19,15 @@
             android:weightSum="100"
             android:orientation="horizontal">
 
-            <ImageView
+            <TextView
+                android:onClick="backButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
-                android:onClick="printPath"
-                android:src="@drawable/ic_archive_button"
+                android:text="@string/back"
+                android:textColor="#5D6D7E"
+                android:gravity="center"
+                android:textSize="25dp"
                 android:padding="18dp" />
             <TextView
                 android:id="@+id/username"
@@ -37,7 +40,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="60"/>
             <ImageView
-                android:onClick="toSettings"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
@@ -61,15 +63,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="60"
+                android:layout_weight="50"
                 android:orientation="horizontal"
                 android:weightSum="100">
-            <ImageView
-                android:id="@+id/main_profile_picture_account"
-                android:layout_width="0dp"
-                android:padding="5dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20" />
+                <ImageView
+                    android:id="@+id/main_profile_picture_account"
+                    android:layout_width="0dp"
+                    android:padding="5dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="20" />
                 <!--User's edit profile button and follower/following ratio count-->
                 <LinearLayout
                     android:layout_width="0dp"
@@ -85,90 +87,42 @@
                         android:layout_weight="50"
                         android:weightSum="100"
                         android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="33.3333333"
-                            android:weightSum="100"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/posts_count"
-                                android:text="0"
-                                android:textColor="#000"
-                                android:textAlignment="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"/>
-                            <TextView
-                                android:text="@string/posts"
-                                android:textColor="#5D6D7E"
-                                android:textAlignment="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="33.3333333"
-                            android:weightSum="100"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/followers_count"
-                                android:text="0"
-                                android:textColor="#000"
-                                android:textAlignment="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"/>
-                            <TextView
-                                android:text="@string/_____followers"
-                                android:textColor="#5D6D7E"
-                                android:textAlignment="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="33.3333333"
-                        android:weightSum="100"
-                        android:orientation="vertical">
                         <TextView
-                            android:id="@+id/following_count"
+                            android:id="@+id/posts_count"
                             android:text="0"
                             android:textColor="#000"
                             android:textAlignment="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="50"/>
-                            <TextView
-                                android:text="@string/___following"
-                                android:textColor="#5D6D7E"
-                                android:textAlignment="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="50"/>
-
-                    </LinearLayout>
-
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="33.33333333333"/>
+                        <TextView
+                            android:id="@+id/followers_count"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="#000"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="33.33333333333"/>
+                        <TextView
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="#000"
+                            android:id="@+id/following_count"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="33.33333333333"/>
                     </LinearLayout>
                     <Button
+                        android:id="@+id/followButton"
+                        android:onClick="followButton"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="40"
-                        android:textColor="#000"
+                        android:layout_weight="50"
+                        android:textColor="#FFF"
                         android:textAlignment="center"
-                        android:text="@string/edit_profile"
-                        android:textSize="13dp"
+                        android:text="@string/follow"
                         android:textAllCaps="false"
-                        android:onClick="edit_profile_button"
-                        android:background="@drawable/rounded_edit_text"
+                        android:background="@drawable/follow_button"
                         />
 
                 </LinearLayout>
@@ -177,17 +131,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:weightSum="100"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal"
-                android:layout_weight="40">
-                <TextView
-                    android:id="@+id/description"
-                    android:layout_width="0dp"
-                    android:gravity="center_vertical"
-                    android:textColor="#000"
-                    android:layout_height="match_parent"
-                    android:layout_weight="60"/>
+                android:layout_weight="50">
             </LinearLayout>
         </LinearLayout>
 
@@ -202,9 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".25"
-            android:background="#000000">
-
-        </LinearLayout>
+            android:background="#000000"></LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -240,7 +182,7 @@
                 android:src="@drawable/ic_insta_heart"
                 android:padding="15dp"/>
             <ImageView
-                android:id="@+id/profile_picture"
+                android:id="@+id/bottom_profile_picture"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"

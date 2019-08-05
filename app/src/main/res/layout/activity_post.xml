@@ -4,45 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.UploadProfilePicture">
-
+    tools:context=".Activities.postActivity">
     <LinearLayout
+        android:id="@+id/post_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#DCDCDC"
         android:weightSum="100"
         android:orientation="vertical">
-        <TextView
+        <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:gravity="center"
-            android:textColor="#DB7093"
-            android:text="@string/upload_a_profile_picture"
-            android:textSize="25dp"
-            />
-        <!--    This is where the profile picture will be    -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="40">
-
-            <ImageView
-                android:id="@+id/profile_picture"
-                android:layout_width="match_parent"
+            android:weightSum="100"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_foreground"
-
-                />
-
+                android:onClick="toHomeFeed"
+                android:layout_weight="50"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="left|center_vertical"
+                android:padding="20dp"
+                android:textColor="#0069D9"
+                android:text="@string/back"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:textSize="15dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="right|center_vertical"
+                android:padding="20dp"
+                android:textColor="#0069D9"
+                android:onClick="toDescriptionFragment"
+                android:text="@string/next"/>
         </LinearLayout>
-        <!--This is where the option to take a picture with the phone camera or upload from external memory option will be  -->
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:src="@drawable/ic_add_photo"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="25"
+            android:layout_weight="30"
             android:weightSum="100"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,6 +70,7 @@
                 android:gravity="center"
                 android:background="@drawable/rounded_edit_text"
                 android:text="Upload from Library"
+                android:onClick="chooseFromLibrary"
                 android:id="@+id/photo_library"/>
             <TextView
                 android:layout_width="match_parent"
@@ -59,7 +78,7 @@
                 android:layout_weight="5"
                 />
             <TextView
-                android:onClick="take_a_picture"
+                android:onClick="takeAPicture"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="30"
@@ -69,29 +88,6 @@
                 android:text="Take a Picture"/>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="25"
-            android:orientation="horizontal"
-            android:weightSum="100"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/intro_layout_continue"
-                android:onClick="toHomePage"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="80"
-
-                android:hint="Continue..."
-                android:textColorHint="#FFFFFF"
-                android:clickable="true" />
-
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

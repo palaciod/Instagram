@@ -7,8 +7,12 @@ public class User {
     private String phone_number;
     private String bday;
     private int age;
+    private int followers;
+    private int following;
+    private int posts;
+    private String profileDescription;
 
-    public User(String _name, String birthday, int _age,  String phoneNumber, String _gender, String _username){
+    public User(String _name, String birthday, int _age,  String phoneNumber, String _gender, String _username, int followersCount, int followingCount, int _posts, String description){
         name = _name;
         bday = birthday;
         age = _age;
@@ -16,6 +20,10 @@ public class User {
         bday = birthday;
         gender = _gender;
         userName = _username;
+        followers = followersCount;
+        following = followingCount;
+        posts = _posts;
+        profileDescription = description;
     }
     public String getName(){
         return name;
@@ -59,5 +67,37 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
+
+    public int getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(int following) {
+        this.following = following;
+    }
+
+    public int getPosts() {
+        return posts;
+    }
+
+    public void setPosts(int posts) {
+        this.posts = posts;
+    }
+
+    public String getProfileDescription() {
+        return profileDescription;
+    }
+
+    public void setProfileDescription(String profileDescription) {
+        this.profileDescription = profileDescription;
     }
 }

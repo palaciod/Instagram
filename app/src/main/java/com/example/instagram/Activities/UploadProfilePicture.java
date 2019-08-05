@@ -13,10 +13,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.instagram.Models.FirebaseMethods;
 import com.example.instagram.R;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class UploadProfilePicture extends AppCompatActivity {
     private static final String TAG = "UploadProfilePicture";
@@ -59,7 +62,9 @@ public class UploadProfilePicture extends AppCompatActivity {
             Uri selectedImageUri = data.getData();
             Log.d(TAG, "onActivityResult: image uri: " + selectedImageUri);
             System.out.println("This is my image url: " + selectedImageUri);
-            profilePicture.setImageURI(selectedImageUri);
+            //profilePicture.setImageURI(selectedImageUri);
+            Glide.with(UploadProfilePicture.this).load(selectedImageUri).centerCrop().apply(RequestOptions.circleCropTransform()).into(profilePicture);
+
             fbMethods.uploadPictureFromLibrary(selectedImageUri);
 
             /*
@@ -68,9 +73,10 @@ public class UploadProfilePicture extends AppCompatActivity {
         }else if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             Log.d(TAG, "onActivityResult: done taking new photo");
             Bitmap bitmap;
-            bitmap = (Bitmap) data.getExtras().get("data"); 
-            profilePicture.setImageBitmap(bitmap);
-
+            bitmap = (Bitmap) data.getExtras().get("data");
+            //profilePicture.setImageBitmap(bitmap);
+            Glide.with(UploadProfilePicture.this).load(bitmap).centerCrop().apply(RequestOptions.circleCropTransform()).into(profilePicture);
+            fbMethods.uploadPictureFromCamera(bitmap);
         }
 
 

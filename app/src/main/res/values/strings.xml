@@ -7,8 +7,36 @@
     <string name="rype_pass">Retype Password:</string>
     <string name="register_a_new_account">Register A New Account</string>
     <string name="register">Register</string>
-    <string name="edit_profile">edit_profile</string>
+    <string name="edit_profile">Edit Profile</string>
     <string name="back"><![CDATA[<-]]></string>
     <string name="upload_a_profile_picture">Upload A Profile Picture:</string>
+    <string name="empty" />
+    <string name="post">Post</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="write_a_caption">Write a caption...</string>
+    <string name="next">Next</string>
+    <string name="search">Search</string>
+    <string name="follow">Follow</string>
+    <string name="backArrow"><![CDATA[<-]]></string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="_name">Name</string>
+    <string name="__username">Username</string>
+    <string name="website">Website</string>
+    <string name="bio">Bio</string>
+    <string name="private_information">Private Information:</string>
+    <string name="__email">Email</string>
+    <string name="__phone">Phone</string>
+    <string name="__gender">Gender</string>
+    <string name="log_out">Log Out</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="comment">comment</string>
+    <string name="zero">0</string>
+    <string name="posts">Posts</string>
+    <string name="_____followers">Followers</string>
+    <string name="___following">Following</string>
 
 </resources>
