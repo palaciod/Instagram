@@ -22,7 +22,7 @@
 
             <ImageView
                 android:id="@+id/camera_post"
-                android:onClick="log_out"
+                android:onClick="compareDrawable"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_cam_trans"

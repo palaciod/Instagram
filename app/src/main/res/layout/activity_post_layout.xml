@@ -15,6 +15,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_weight="8">
+            <TextView
+                android:onClick="backButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:textColor="#000"
+                android:gravity="center_horizontal"
+                android:textSize="15dp"
+                android:background="@drawable/go_back"
+
+                android:padding="100dp" />
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="0dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="@string/empty"
+                android:textSize="25dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"/>
+            <ImageView
+                android:onClick="options"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/ic_settings_button"
+                android:padding="15dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="10"
             android:weightSum="100"
 
@@ -41,7 +79,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="62"
+            android:layout_weight="59"
             android:src="@drawable/ic_launcher_foreground"
             android:id="@+id/post_image"/>
         <LinearLayout
@@ -56,7 +94,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="20"
                 android:src="@drawable/ic_insta_heart"
-                android:padding="5dp"/>
+                android:padding="10dp"/>
             <ImageView
                 android:id="@+id/conversation_button"
                 android:layout_width="0dp"
@@ -100,7 +138,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_weight="5"
             android:weightSum="100"
             android:orientation="horizontal">
 

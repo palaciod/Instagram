@@ -57,7 +57,7 @@ public class AccountProfile extends AppCompatActivity implements RecyclerViewAda
         mFirebaseMethods.read_from_database(follower_count,following_count,post_count,username);
         mFirebaseMethods.findProfilePicture(profilePicture, main_profilePicture, this);
         bio = findViewById(R.id.description);
-        mFirebaseMethods.getDescription(bio);
+        mFirebaseMethods.getDescription(bio,mFirebaseMethods.getUserID());
         recyclerViewInit();
     }
 

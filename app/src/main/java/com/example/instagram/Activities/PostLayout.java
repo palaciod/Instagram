@@ -3,6 +3,7 @@ package com.example.instagram.Activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,9 +44,35 @@ public class PostLayout extends AppCompatActivity {
         heartButton = findViewById(R.id.like_button);
         convoButton = findViewById(R.id.conversation_button);
         likes = findViewById(R.id.number_of_likes);
-        fbMethods.findProfilePicture(profilePicture,null,this);
+        System.out.println("THIS IS MY ID <----------------> "+id);
+        System.out.println("THIS IS MY userID <----------------> "+userID);
+        fbMethods.search(profilePicture,null,this,userID);
         fbMethods.showPostInfor(userID,id,topUsername,bottomUsername,comment,likes,postImage);
         fbMethods.clickListenersPostLayout(heartButton,id);
 
+    }
+
+    public void backButton(View view) {
+        Intent prevIntent = getIntent();
+        if(prevIntent.getExtras().getString("activity").equals("class com.example.instagram.Activities.searchedUserProfile")){
+            Intent intent = new Intent(this, searchedUserProfile.class);
+            intent.putExtra("userID", userID);
+            startActivity(intent);
+            finish();
+        }
+        if(prevIntent.getExtras().getString("activity").equals("class com.example.instagram.Activities.AccountProfile")){
+            Intent intent = new Intent(this, AccountProfile.class);
+            startActivity(intent);
+            finish();
+        }
+        if(prevIntent.getExtras().getString("activity").equals("class com.example.instagram.Activities.searchActivity")){
+            Intent intent = new Intent(this, searchActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
+
+    public void options(View view) {
     }
 }

@@ -93,7 +93,7 @@ public class searchActivity extends AppCompatActivity implements searchFragment.
 
                     identifierList.add(Integer.parseInt(ds.getKey()));
                     userIDList.add(ds.child("userID").getValue().toString());
-                    if(identifierList.size()==3){
+                    if(identifierList.size()==3 ){
                         ArrayList<Integer> temp = new ArrayList<>();
                         ArrayList<String> userTemp = new ArrayList<>();
 
@@ -114,8 +114,8 @@ public class searchActivity extends AppCompatActivity implements searchFragment.
                         identifierList.clear();
                         userIDList.clear();
                     }
-                    System.out.println("This is tracker" + tracker);
-                    System.out.println("This is tracker" + identifierList.size());
+//                    System.out.println("This is tracker" + tracker);
+//                    System.out.println("This is tracker" + identifierList.size());
                     tracker++;
                     if(tracker == dataSnapshot.child("random_search_post_list").getChildrenCount()){
                         if(identifierList.size()!= 0){

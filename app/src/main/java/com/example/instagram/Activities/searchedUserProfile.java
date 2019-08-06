@@ -37,6 +37,7 @@ public class searchedUserProfile extends AppCompatActivity {
     private TextView usernameText;
     private String userID;
     private Button followButton;
+    private TextView bio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,7 @@ public class searchedUserProfile extends AppCompatActivity {
         postCount = findViewById(R.id.posts_count);
         usernameText = findViewById(R.id.username);
         followButton = findViewById(R.id.followButton);
+        bio = findViewById(R.id.description);
         toMyAccountProfile();
         Intent intent = getIntent();
         userID = intent.getExtras().getString("userID");
@@ -57,6 +59,7 @@ public class searchedUserProfile extends AppCompatActivity {
         firebaseMethods.getSearchUsername(followerCount,followingCount,postCount,usernameText,userID);
         firebaseMethods.stateFollowButton(userID, followButton);
         firebaseMethods.searchedProfilePicture(bottomProfilePicture,this);
+        firebaseMethods.getDescription(bio, userID);
         recyclerViewInit();
     }
 
@@ -146,7 +149,7 @@ public class searchedUserProfile extends AppCompatActivity {
 
                 // Here is where we will call our initRecyclerView method
                 System.out.println("This is of the arrayList <------------------> " + identifierListHolder.size());
-                RecyclerView recyclerView = findViewById(R.id.recycler_view);
+                RecyclerView recyclerView = findViewById(R.id.recycler);
                 RecyclerViewAdapter adapter = new RecyclerViewAdapter(identifierListHolder,searchedUserProfile.this,userID,userIDList);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(searchedUserProfile.this));

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -97,6 +98,7 @@ public class FirebaseMethods {
         Toast.makeText(this.myContext,message,Toast.LENGTH_SHORT).show();
     }
 
+
     public void sign_in_status(final Class current_class){
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -122,8 +124,8 @@ public class FirebaseMethods {
         };
 
     }
-    public void getDescription( final TextView bio){
-        myRef.child("user_account_details").child(userID).addValueEventListener(new ValueEventListener() {
+    public void getDescription( final TextView bio, String _userID){
+        myRef.child("user_account_details").child(_userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String _bio = dataSnapshot.child("profileDescription").getValue().toString();
@@ -429,6 +431,28 @@ public class FirebaseMethods {
         });
 
     }
+    public void search(final ImageView selectedImage, final ImageView account_profile_picture, final Activity currentClass,String _userID){
+        mStorageRef.child("profilePictures/users/" + _userID + "/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                //System.out.println("This is my uri: " + uri);
+
+                Glide.with(currentClass).load(uri).apply(RequestOptions.circleCropTransform()).into(selectedImage);
+                if(account_profile_picture != null){
+                    Glide.with(currentClass).load(uri).apply(RequestOptions.circleCropTransform()).into(account_profile_picture);
+                }else {
+                    System.out.println("This is the home activity page where there is no account profile image.");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                toastMessage("Download Failed");
+            }
+        });
+
+    }
+
     public void searchedProfilePicture(final ImageView bottomProfilePicture, final Activity currentClass){
         mStorageRef.child("profilePictures/users/" + userID + "/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
@@ -548,19 +572,20 @@ public class FirebaseMethods {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 System.out.println(id+ "                   kakakakakaka");
-                System.out.println("<-------------------datasnapshot------------------------->"+dataSnapshot.child("user_account_details").child(userID));
-                String username = dataSnapshot.child("user_account_details").child(userID).child("userName").getValue().toString();
+                System.out.println("<-------------------datasnapshot------------------------->"+dataSnapshot.child("user_account_details").child(_userID));
+                System.out.println("<-------------------userID------------------------->"+_userID);
+                String username = dataSnapshot.child("user_account_details").child(_userID).child("userName").getValue().toString();
                 long likesInt = dataSnapshot.child("post_likes").child(Integer.toString(id)).getChildrenCount();
                 topUsername.setText(username);
                 bottomUsername.setText(username);
                 String likes = Long.toString(likesInt);
                 likesText.setText(likes);
-                String comment = dataSnapshot.child("comment_section").child(userID).child(Integer.toString(id)).child(username).getValue().toString();
+                String comment = dataSnapshot.child("comment_section").child(_userID).child(Integer.toString(id)).child(username).getValue().toString();
                 commentText.setText(comment);
-                mStorageRef.child("posts/users/" + userID + "/" + Integer.toString(id) + "/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                mStorageRef.child("posts/users/" + _userID + "/" + Integer.toString(id) + "/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        Glide.with(myContext).load(uri).fitCenter().into(postPicture);
+                        Glide.with(myContext.getApplicationContext()).load(uri).fitCenter().into(postPicture);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -578,6 +603,8 @@ public class FirebaseMethods {
 
     }
     public void clickListenersPostLayout(final ImageView heartButton, final Integer id){
+        Drawable one = myContext.getDrawable(R.drawable.ic_red_heart);
+
         heartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -588,9 +615,11 @@ public class FirebaseMethods {
                 heartButton.setImageResource(R.drawable.ic_red_heart);
                 //Glide.with(myContext).load(R.drawable.ic_red_heart).into(viewHolder.heartButton);
                 //viewHolder.heartButton.setImageDrawable();
+                clickListenersPostLayout(heartButton,id);
             }
         });
         //
+
 
 
         myRef.child("post_likes").child(id.toString()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -607,6 +636,7 @@ public class FirebaseMethods {
                                 // Here is the bug
                                 myRef.child("post_likes").child(id.toString()).child(userID).removeValue();
                                 Glide.with(myContext).load(R.drawable.ic_insta_heart).into(heartButton);
+                                clickListenersPostLayout(heartButton,id);
                             }
                         });
                         break;

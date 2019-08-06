@@ -67,7 +67,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if(!userIDList.isEmpty()){
                 userID = userIDList.get(i).get(0);
             }
-            System.out.println("<--------------------------------------------->");
+            System.out.println("<------------------"+userID+"--------------------------->");
+            final String firstUserID = userID;
             System.out.println(mySelectedImageUris.get(i).get(0));
             //Glide.with(myContext).load(mySelectedImageUris.get(i).get(0)).centerCrop().into(viewHolder.firstImage);
             storageReference.child(userID).child(mySelectedImageUris.get(i).get(0).toString()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -77,9 +78,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     viewHolder.firstImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             Intent intent = new Intent(myContext, PostLayout.class);
-                            intent.putExtra("UserID",userID);
+                            intent.putExtra("UserID",firstUserID);
                             intent.putExtra("identifier", mySelectedImageUris.get(i).get(0).toString());
+                            intent.putExtra("activity",((Activity) myContext).getClass().toString());
+                            System.out.println("popopoppppopoppoopop                                                  " + ((Activity) myContext).getClass().toString());
                             myContext.startActivity(intent);
                             ((Activity) myContext).finish();
                         }
@@ -98,8 +102,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 if(!userIDList.isEmpty()){
                     userID = userIDList.get(i).get(1);
                 }
-                System.out.println("<--------------------------------------------->");
+                System.out.println("<------------------"+userID+"--------------------------->");
                 System.out.println(mySelectedImageUris.get(i).get(1));
+                final String secondUserID = userID;
                 storageReference.child(userID).child(mySelectedImageUris.get(i).get(1).toString()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -108,8 +113,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(myContext, PostLayout.class);
-                                intent.putExtra("UserID",userID);
+                                intent.putExtra("UserID",secondUserID);
                                 intent.putExtra("identifier", mySelectedImageUris.get(i).get(1).toString());
+                                intent.putExtra("activity",((Activity) myContext).getClass().toString());
+                                System.out.println("popopoppppopoppoopop                                                  " + userID);
                                 myContext.startActivity(intent);
                                 ((Activity) myContext).finish();
                             }
@@ -132,8 +139,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 if(!userIDList.isEmpty()){
                      userID = userIDList.get(i).get(2);
                 }
-                System.out.println("<--------------------------------------------->");
+                System.out.println("<------------------"+userID+"--------------------------->");
                 System.out.println(mySelectedImageUris.get(i).get(2));
+                final String thirdUserID = userID;
                 storageReference.child(userID).child(mySelectedImageUris.get(i).get(2).toString()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -142,8 +150,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent(myContext, PostLayout.class);
-                                intent.putExtra("UserID",userID);
+                                intent.putExtra("UserID", thirdUserID);
                                 intent.putExtra("identifier", mySelectedImageUris.get(i).get(2).toString());
+                                intent.putExtra("activity",((Activity) myContext).getClass().toString());
+                                System.out.println("popopoppppopoppoopop                                                  " + userID);
                                 myContext.startActivity(intent);
                                 ((Activity) myContext).finish();
                             }

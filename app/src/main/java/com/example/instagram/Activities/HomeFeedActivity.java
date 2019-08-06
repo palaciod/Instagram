@@ -133,6 +133,16 @@ public class HomeFeedActivity extends AppCompatActivity {
         });
     }
 
+    public void compareDrawable(View view){
+        Drawable one = getDrawable(R.drawable.ic_red_heart);
+        Drawable two = getDrawable(R.drawable.ic_red_heart);
+        if(one.getConstantState().equals(two.getConstantState())){
+            System.out.println(true);
+        }else{
+            System.out.println(false);
+        }
+    }
+
     @Override
     public void onStart() {
         super.onStart();
