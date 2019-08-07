@@ -1,7 +1,7 @@
 # Instagram
 A copy of the famous social media android application. 
 
-### Alt-Why did I build an already existing app? 
+### Why did I build an already existing app? 
 
 I wanted to familiarize myself with the Firebase real-time database and its storage.
 I found it to be convenient and simple to understand with its detailed documentation. 
@@ -28,5 +28,9 @@ app with just firebase and I did.
 #### What I didn't include: 
 1. A story board system.
 2. A messaging system. (Still in the process)
+
+<img src="67615258_557512958157082_1957501481967943680_n.png"
+    style="float: left; margin-right: 10px;"
+    width="200"/>
 
 ![DVFRcU](https://user-images.githubusercontent.com/26179594/62586012-9fa60a00-b889-11e9-8e34-a24369b5cd7a.gif) 
