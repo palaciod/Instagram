@@ -28,7 +28,7 @@ app with just firebase and I did.
 #### What I didn't include: 
 1. A story board system.
 2. A messaging system. (Still in the process)
-3. When searching the a profile the user must input the complete correct username
+3. When searching a profile the user must input the complete correct username
 
 #### Below are some screenshots of the app
 
