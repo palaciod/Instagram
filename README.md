@@ -23,7 +23,7 @@ app with just firebase and I did.
 3. A dedicated profile that includes a bio, follower count, following count, and post count
 4. Users are allowed to like each other’s posts as well as comment. Those likes are also tracked and give the amount of likes per post.
 5. Users can also follower other profiles that will show their posts in the user’s home feed.
-6. Users can upload images from their image gallery store in external storage or can be uploaded via camera.
+6. Users can upload images from their image gallery in external storage or can be uploaded via camera.
 
 #### What I didn't include: 
 1. A story board system.
