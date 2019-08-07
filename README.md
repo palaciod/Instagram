@@ -29,8 +29,13 @@ app with just firebase and I did.
 1. A story board system.
 2. A messaging system. (Still in the process)
 
-<img src="67615258_557512958157082_1957501481967943680_n.png"
+#### Below are some screenshots of the app
+
+<img src="67736965_332788474276004_9182136725860777984_n.png"
+    alt="home"
     style="float: left; margin-right: 10px;"
+    width="200"/> <img src="68673336_2419623118363713_5571345750039724032_n.png"
+    alt="home"
+    style="float: left; margin-right:10px;"
     width="200"/>
 
-![DVFRcU](https://user-images.githubusercontent.com/26179594/62586012-9fa60a00-b889-11e9-8e34-a24369b5cd7a.gif) 
