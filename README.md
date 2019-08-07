@@ -28,3 +28,5 @@ app with just firebase and I did.
 #### What I didn't include: 
 1. A story board system.
 2. A messaging system. (Still in the process)
+
+![DVFRcU](https://user-images.githubusercontent.com/26179594/62586012-9fa60a00-b889-11e9-8e34-a24369b5cd7a.gif) 
