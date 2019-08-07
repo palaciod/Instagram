@@ -56,6 +56,9 @@ app with just firebase and I did.
     width="200"/>  <img src="68673336_2419623118363713_5571345750039724032_n.png"
     alt="home"
     style="float: left; margin-right:10px;"
+    width="200"/> <img src="67666740_470800967046858_6891850547754696704_n.png"
+    alt="home"
+    style="float: left; margin-right:10px;"
     width="200"/> 
     
     
