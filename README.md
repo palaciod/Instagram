@@ -28,6 +28,7 @@ app with just firebase and I did.
 #### What I didn't include: 
 1. A story board system.
 2. A messaging system. (Still in the process)
+3. When searching the a profile the user must input the complete correct username
 
 #### Below are some screenshots of the app
 
@@ -46,10 +47,13 @@ app with just firebase and I did.
     width="200"/> 
     
  
- <img src="68673336_2419623118363713_5571345750039724032_n.png"
+ <img src="67686714_2344728655604711_4523518216810528768_n (1).png"
     alt="home"
     style="float: left; margin-right: 10px;"
-    width="200"/>
+    width="200"/>  <img src="67736965_332788474276004_9182136725860777984_n.png"
+    alt="home"
+    style="float: left; margin-right:10px;"
+    width="200"/> 
     
     
  
