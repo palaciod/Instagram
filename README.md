@@ -5,7 +5,7 @@ A copy of the famous social media android application.
 
 I wanted to familiarize myself with the Firebase real-time database and its storage.
 I found it to be convenient and simple to understand with its detailed documentation. 
-Of course it’s heavily advised to not use firebase as your entire backend, I just wanted to see if it was possible to build and entire social media
+Of course it’s heavily advised to not use firebase as your entire backend, I just wanted to see if it was possible to build an entire social media
 app with just firebase and I did.
 
 ## Technologies: 
